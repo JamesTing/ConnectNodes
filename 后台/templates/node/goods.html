@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title></title>
+</head>
+<style type="text/css">
+html,body,ul,li,p,table,tbody,tr,td,img{margin: 0;padding: 0;list-style: none;font-size: 12px;color: #333;border:none;}
+body{font: 12px/12px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;}
+.clearfix:after{clear:both;overflow:hidden;content:"";display:table;}
+.clearfix{zoom:1;}
+#container{width:349px;overflow:hidden;}
+#info{border-top:#ebebeb dashed 1px;margin:10px 0 0;padding:2px 0 0;}
+#info *{vertical-align:middle;}
+#info .logo{float:left;}
+#info .more{float:right;width:250px;text-align:right;}
+#info .more img{margin-right:2px;}
+#info .more a{color:#999;text-decoration: none;}
+#info .more a:hover{text-decoration: underline;}
+ul li{width:106px;float:left;vertical-align:top;margin: 0 15px 0 0;}
+ul{width:363px;}
+.title{color: #666;text-decoration: none;line-height: 1.25;width:106px;display:inline-block;
+ white-space:nowrap;
+ word-break:keep-all;
+ overflow:hidden;
+ text-overflow:ellipsis;}
+.title:hover{text-decoration: underline;}
+.image{width:100px;height:100px;padding:2px;text-align:center;margin: 0 0 3px;border: solid 1px #f2f2f2;}
+.image:hover{border: solid 1px #d7d7d7;}
+.image table{text-align:center;vertical-align:middle;width:100%;height:100%;border-collapse:collapse;border-spacing:0;}
+.image table img{max-width:100px;max-height:100px;}
+.price{color: #f40;}
+</style>
+<body>
+    <div id="container">
+        <ul class="clearfix">
+            {% for value in goods %}
+            <li>
+                <div class="image">
+                    <table>
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="{{ value.saleslink }}" target="_blank"><img src="{{ value.image }}"></a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <a class="title" href="{{ value.saleslink }}" target="_blank">{{ value.title }}</a><span class="price">{{ value.price }}</span>
+            </li>
+            {% endfor %}
+        </ul>
+        <div id="info" class="clearfix">
+            <div class="logo"><a href="http://connectnodes.com" target="_blank"><img src="/static/images/logo-gray.png"></a></div>
+            <div class="more"><a href="http://www.amazon.cn/gp/search?ie=UTF8&camp=1789&creative=9325&index=aps&keywords={{ meta.keyword }}&linkCode=ur2&tag={{ meta.unionid }}" target="_blank"><img src="{{ meta.icon }}">更多{{ meta.keyword }}..</a></div>
+        </div>        
+    </div>
+</body>
+</html>

@@ -1,0 +1,57 @@
+.simple {
+	z-index:1000;
+	text-align:left;
+	padding:10px 10px 5px;
+	/**
+	 * - If you set a background-image, border/padding/background-color will be ingnored.
+	 *   You can set any padding to .tip-inner instead if you need.
+	 * - If you want a tiled background-image and border/padding for the tip,
+	 *   set the background-image to .tip-inner instead.
+	 */
+	background-color: #fff;
+	-webkit-box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	-moz-box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	box-shadow: 0 2px 5px rgba(0,0,0,.2);
+	border: solid 1px #e0e0e0;
+}
+.simple .tip-inner {
+	font:bold 12px/14px arial,helvetica,sans-serif;
+}
+
+/* Configure an arrow image - the script will automatically position it on the correct side of the tip */
+.simple .tip-arrow-top {
+	margin-top:-14px;
+	margin-left:6px;
+	top:0;
+	left:0;
+	width:18px;
+	height:14px;
+	background:url(simple_arrows.png) no-repeat 0 -2px;
+}
+.simple .tip-arrow-right {
+	margin-top:6px;
+	margin-left:16px;
+	top:0;
+	left:100%;
+	width:16px;
+	height:20px;
+	background:url(simple_arrows.png) no-repeat -20px 0;
+}
+.simple .tip-arrow-bottom {
+	margin-top:0;
+	margin-left:6px;
+	top:100%;
+	left:0;
+	width:20px;
+	height:16px;
+	background:url(simple_arrows.png) no-repeat -38px -4px;
+}
+.simple .tip-arrow-left {
+	margin-top:6px;
+	margin-left:-16px;
+	top:0;
+	left:0;
+	width:16px;
+	height:20px;
+	background:url(simple_arrows.png) no-repeat -60px 0;
+}

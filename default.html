@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="zh-CN" lang="zh-CN">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" /> 
+	<meta name="Author" content="Connectnodes Inc." /> 
+	<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7, IE=9" /> 
+	<title>连节 - 为站长盈利</title>
+    <meta name="description" content="连节是一款帮助站长从网站联盟盈利的免费插件。" />
+	<script type='text/javascript' src='http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.0.min.js'></script>
+</head>
+<script type="text/javascript">
+	jQuery(document).ready(function(){
+		$("#action").click(function(){
+			$("#generate").slideToggle();
+		});
+		$(".card").css("display","block").animate({opacity:0},0);
+		$(".card").delay(800).animate({bottom:"+=20",opacity:1},500);
+	});
+</script>
+<style type="text/css">
+	html,body,h1,h2,h3,h4,h5,ul,li,p,input,textarea{
+		margin: 0;
+		padding: 0;
+	}
+	ul,li{
+		list-style: none;
+	}
+	body,a{
+		font: 12px/18px "Lucida Grande", "Lucida Sans Unicode", Helvetica, Arial, Verdana, sans-serif;
+		color: #333;
+		text-decoration: none;
+	}
+	.clearfix:after{
+		clear:both;
+		overflow:hidden;
+		content:"";
+		display:table;
+	}
+	.clearfix{
+	    zoom:1;
+	}
+	.box{
+		width: 950px;
+		margin: 0 auto;
+	}
+	.graypanel{
+		background: #f1f1f1;
+	}
+	#header{
+		height: 40px;
+		background: #f7f7f7;
+	}
+	#header ul{
+		float: right;
+		text-align: right;
+		margin: 15px 0 0;
+	}
+	#header ul li{
+		float: left;
+		margin: 0 0 0 25px;
+	}
+	#header ul li a{
+		display: inline-block;
+		color: #ccc;
+		padding: 0 2px;
+	}
+	#header ul li a:hover{
+		background: #ccc;
+		color: #fff;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+	}
+	#logo{
+		float: left;
+		margin: 8px 0 0;
+	}
+	#introduction{
+		padding: 40px 0 0;
+	}
+	#introduction .screenshot{
+		float: left;
+		width: 480px;
+		position:relative;
+		margin-left: -15px;
+	}
+	.screenshot .card{
+		position:absolute;
+		bottom:115px;
+		left:115px;
+		display: none;
+	
+	}
+	#introduction .summary{
+		float: right;
+		width: 455px;
+	}
+	#introduction h1{
+		margin: 20px 0 20px;
+	}
+	#introduction .summary p{
+		font-size: 14px;
+		line-height: 24px;
+		padding: 0 5px 5px 0;
+		color: #6c6b6b;
+	}
+	#action{
+		cursor: pointer;
+		margin: 25px 0 0;
+		display: inline-block;
+		width: 106px;
+		height: 42px;
+		line-height: 46px;
+		text-align: center;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background-color: #f40;
+		-webkit-box-shadow: 0 3px #db3a00;
+		-moz-box-shadow: 0 3px #db3a00;
+		box-shadow: 0 3px #db3a00;
+		color: #fff;
+		font-size: 18px;
+		text-shadow: 0 -1px rgba(0,0,0,.2);
+	}
+	#action:hover{
+		background: #db3a00;
+	}
+	#action:active{
+		background: #aa2d00;
+	}
+	#createcode{
+		margin-top:-20px;
+		display: inline-block;
+		width: 76px;
+		height: 34px;
+		line-height:34px;
+		-webkit-border-radius: 3px;
+		-moz-border-radius: 3px;
+		border-radius: 3px;
+		background-color: #00bb6e;
+		text-align:center;
+		font-size: 14px;
+		color: #fff;
+		text-shadow: 0 -1px rgba(0,0,0,.15);
+		cursor: pointer;
+	}
+	#createcode:hover{
+		background: #009a5b;
+	}
+	#createcode:active{
+		background: #00814c;
+	}
+	h2,h3,h4{
+		text-align: center;
+		line-height: 1;
+	}
+	h3{
+		margin: 5px 0 30px;
+	}
+	h4{
+		margin:5px 0 0;
+	}
+	#feature,#showcase,#generate{
+		padding: 50px 0;
+	}
+	#featurelist{
+		width:1020px;
+	}
+	#featurelist li{
+		float: left;
+		width: 190px;
+		text-align: center;
+		margin: 0 63px 0 0;
+	}
+	#featurelist li p{
+		text-align: left;
+		color: #8c9197;
+		line-height: 22px;
+	}
+	#generate{
+		border-top:#e5e5e5 solid 1px;
+		display: none;
+		position: relative;
+	}
+	.triangle{
+		position: absolute;
+		width: 12px;
+		height: 7px;
+		top: -1px;
+		left: 50%;
+		margin-left: -6px;
+		background:#f1f1f1 url(/static/images/triangle.png) center top no-repeat;
+	}
+	.configration{
+		float:left;
+		text-align:right;
+		width:450px;
+	}
+	.configration ul li{
+		margin:0 0 40px;
+	}
+	.configration label{
+		color:#888;
+	}
+	.radio{
+		margin:0 0 0 20px;
+		vertical-align:middle; 
+		margin-top:-2px; 
+		margin-bottom:1px;
+		cursor: pointer;
+	}
+	label:hover{
+		cursor: pointer;
+		color: #333;
+	}
+	label a{
+		color: #888;
+	}
+	label a:hover{
+		color: #333;
+		text-decoration: underline;
+	}
+	.textinput{
+		height:30px;
+		width:150px;
+		border:#d5d5d5 solid 1px;
+		text-align:right;
+		padding:0 6px;
+		color: #666;
+	}
+	.alert{
+		border: #EEADB7 solid 1px;
+		background: #f2dede;
+	}
+	#codepool{
+		border:#d5d5d5 solid 1px;
+		padding:10px;
+		width:430px;
+		height:155px;
+		color: #666;
+	}
+	h5{
+		color:#666;
+		font-size:14px;
+		font-weight:normal;
+		margin:0 0 5px;
+	}
+	.result{
+		float:right;
+		width:452px;
+	}
+	.tip{
+		color:#b3b3b3;
+	}
+	#footer{
+		text-align: center;
+		padding: 20px 0;
+		color: #bcbcbc;
+		font-size: 14px;
+	}
+</style>
+<body>
+	<div id="header">
+		<div class="box">
+			<div id="logo"><img src="/static/images/logo.png"></div>
+			<ul>
+				<li><a href="http://drips.me" target="_blank">作者博客</a></li>
+				<li><a href="http://drips.me/?p=159#comments" target="_blank">联系我们</a></li>
+				<li><a href="http://drips.me/?p=159" target="_blank">FAQ</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="introduction" class="graypanel">
+		<div class="box clearfix">
+			<div class="screenshot"><img src="/static/images/browser.png"><img class="card" src="/static/images/card.png"></div>
+			<div class="summary">
+				<h1><img src="/static/images/name.png" alt="连节" title="由站长造 为站长用"></h1>
+				<div class="excerpt">
+					<p>连节是一款帮助站长盈利的免费插件。站长只需在网页引入一段 JavaScript 代码，连节就会智能识别网页中的商品关键词，并以此为访客展现B2C商城（亚马逊等）商品，为站长赚取成交佣金。</p>
+					<p>连节不会占用您的广告位置，只有用户鼠标浮动到商品关键词上时才会为其显示推荐商品。相比传统广告，连节更为精准且不易被忽视，转化率更高，收益更高。</p>
+				</div>
+				<a id="action">立即获取</a>
+			</div>
+		</div>
+	</div>
+	<div id="generate" class="graypanel clearfix">
+		<div class="triangle"></div>
+		<div class="box">
+			<div class="configration">
+				<ul>
+					<li>
+						<h5>联盟网站</h5>
+						<label><a href="http://drips.me/?p=159" target="_blank">为什么不支持淘宝客？</a></label>
+						<input type="radio" id="amazonradio" checked="true" class="radio" name="union" value="amazon">
+						<label for="amazonradio">亚马逊中国</label>
+					</li>
+					<li class="clearfix">
+						<div style="float:right;width:200px;">
+							<input type="text" name="classname" id="classname" class="textinput" value="" placeholder="网页正文class"><br>
+							<span class="tip">网页中正文区域CSS样式名<br>在网页中<b style="color:#666">必须唯一</b></span>
+						</div>	
+						<div style="float:right;width:200px;">
+							<input type="text" name="unionid" id="unionid" class="textinput" value="" placeholder="联盟ID"><br>
+							<span class="tip">您在网络联盟的推介号</span>							
+						</div>
+					</li>				
+				</ul>
+				<a id="createcode">生成代码</a>
+			</div>
+			<div class="result">
+				<textarea id="codepool" readonly="readonly"  placeholder="代码将会出现在这里"></textarea><br>
+				<span class="tip">将上面的代码复制粘贴到您的网页，可以在&lt;body&gt;和&lt;/body&gt;的之间网页的任意位置放置。如果您的网站使用模板，建议复制代码到模板。</span>
+			</div>
+			<script type="text/javascript">
+				jQuery(document).ready(function(){
+					$("#createcode").click(function(){
+						$(".textinput").removeClass("alert");
+						$("#codepool").val("");
+						var union = radiovalue("union");
+						var classname = $("#classname").val();
+						var unionid = $("#unionid").val();
+						var begin = "<!--连节代码开始-->\r\n";
+						var end = "\r\n<!--连节代码结束-->";
+						var jquerycdn = "\<script type=\"text/javascript\" src=\"http://upcdn.b0.upaiyun.com/libs/jquery/jquery-2.0.0.min.js\"\>\</script\>\r\n"; 
+						var connectnodes = "\<script type=\"text/javascript\" src=\"http://connectnodes.com/script/" + union + "/" + unionid + "/" + classname + "/" + "\"\>\</script\>";
+						if (unionid == "") {
+							$("#unionid").addClass("alert").fadeOut(100).fadeIn(100).fadeOut(200).fadeIn(500);
+						} else if(classname == ""){
+							$("#classname").addClass("alert").fadeOut(100).fadeIn(100).fadeOut(200).fadeIn(500);
+						} else{
+							$("#codepool").val(begin + jquerycdn + connectnodes + end);
+						};					
+					});
+					$("#codepool").mouseenter(function(){
+						$(this).select();
+					});
+					function radiovalue(name){
+					  var value="";
+					  var radio=document.getElementsByName(name);
+					  for(var i=0;i<radio.length;i++){
+						if(radio[i].checked==true){
+						  value=radio[i].value;
+						  break;
+						}
+					  }
+					  return value;
+					}
+				});				
+			</script>
+		</div>
+	</div>
+	<div id="feature" class="box">
+		<h2><img src="/static/images/feature_title.png" alt=""></h2>
+		<h3><img src="/static/images/feature_words.png" alt=""></h3>
+		<ul id="featurelist" class="clearfix">
+			<li>
+				<img src="/static/images/simple.png">
+				<h4><img src="/static/images/simple_words.png"></h4>
+				<p>您无需任何开发成本，只需引入一段JS代码，连节就会自动安装完成。别忘了，将代码插入到</body>之前可提高网页载入速度。</p>
+			</li>			
+			<li>
+				<img src="/static/images/dollar.png">
+				<h4><img src="/static/images/dollar_words.png"></h4>
+				<p>连节是完全免费的，我们不收取您的任何费用。我们希望通过这项免费服务，帮您获取更多的商品推介成交和更多的收益。</p>
+			</li>			
+			<li>
+				<img src="/static/images/precise.png">
+				<h4><img src="/static/images/precise_words.png"></h4>
+				<p>连节会智能识别您网页中包含的商品关键词，并以此为访客推荐相关商品。这样广告将和网页内容与融为一体，并且无比精准。</p>
+			</li>			
+			<li>
+				<img src="/static/images/search.png">
+				<h4><img src="/static/images/search_words.png"></h4>
+				<p>连节特意为搜索引擎作了优化，采用JS技术封装商品广告，搜索引擎无法察觉。因此请不用担心广告会降低站点的搜索引擎权重。</p>
+			</li>
+		</ul>
+	</div>
+	<div id="showcase" class="graypanel">
+		<div class="box">
+			<h2><img src="/static/images/showcase_title.png" alt=""></h2>
+			<h3><img src="/static/images/showcase_words.png" alt=""></h3>
+			<!--<img src="/static/images/showcase_list.png">-->
+            <div style="text-align:center;color: #bbb;font-size: 24px;">如果您愿意作为案例展示,请联系ahshengchen#gmail.com</div>
+		</div>
+	</div>
+	<div id="footer" class="box">
+		<p>由站长造，为站长用。</p>
+	</div>
+    <div style="display:none;"><script src="http://s96.cnzz.com/stat.php?id=5595391&web_id=5595391" language="JavaScript"></script></div>
+</body>
+</html>
